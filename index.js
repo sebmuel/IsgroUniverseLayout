@@ -12,20 +12,24 @@ stoves.forEach((stove) => {
 
 // out callback
 function handleOut() {
-  if (this.querySelector(".stove-img.aktiv")) {
-    this.querySelector(".stove-img.aktiv").classList.add(OUT_ANIMATION);
-    this.querySelector(".stove-img.aktiv").classList.remove(ENTRANCE_ANIMATION);
+  const stove = this.querySelector(".stove-img.aktiv");
+  if (stove) {
+    stove.classList.add(OUT_ANIMATION);
+    stove.classList.remove(ENTRANCE_ANIMATION);
   }
 }
 // hover callback
 function handleHover() {
-  if (this.querySelector(".stove-img.aktiv")) {
-    this.querySelector(".stove-img.aktiv").classList.add(ENTRANCE_ANIMATION);
-    this.querySelector(".stove-img.aktiv").classList.remove(OUT_ANIMATION);
+  const stove = this.querySelector(".stove-img.aktiv");
+  if (stove) {
+    stove.classList.add(ENTRANCE_ANIMATION);
+    stove.classList.remove(OUT_ANIMATION);
   }
 }
 
+// click callback
 function handleClick() {
+  // get data attribute
   let link = this.dataset.link;
   window.location = link;
 }
