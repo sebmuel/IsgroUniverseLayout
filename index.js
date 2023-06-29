@@ -7,12 +7,7 @@ const OUT_ANIMATION = "animate__fadeOut";
 stoves.forEach((stove) => {
   stove.addEventListener("pointerover", handleHover);
   stove.addEventListener("pointerout", handleOut);
-  const ele = stove.querySelector(".stove-img.aktiv");
-  if (ele) {
-    ele.addEventListener("click", handleClick);
-  } else {
-    stove.addEventListener("click", handleClick);
-  }
+  stove.addEventListener("click", handleClick);
 });
 
 // out callback
@@ -31,11 +26,6 @@ function handleHover() {
 }
 
 function handleClick() {
-  let link;
-  if (this.dataset.link) {
-    link = this.dataset.link;
-  } else {
-    link = this.parentNode.dataset.link;
-  }
+  let link = this.dataset.link;
   window.location = link;
 }
