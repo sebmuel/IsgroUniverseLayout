@@ -1,16 +1,18 @@
+// grab all elements
 const stoves = document.querySelectorAll(".stove");
 
+// add the eventlistener with callbacks
 stoves.forEach((s) => {
   s.addEventListener("pointerover", handleHover);
   s.addEventListener("pointerout", handleOut);
 });
 
+// out callback
 function handleOut() {
-  const ele = this.querySelector(".stove-img.aktiv");
-  ele.style.opacity = "0";
+  this.querySelector(".stove-img.aktiv").style.opacity = "0";
 }
 
+// hover callback
 function handleHover() {
-  const ele = this.querySelector(".stove-img.aktiv");
-  ele.style.opacity = "1";
+  this.querySelector(".stove-img.aktiv").style.opacity = "1";
 }
