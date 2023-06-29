@@ -12,67 +12,63 @@
     />
 
     <style>
-        .stove{
-            position: relative;
-        }
 
-        .stove picture.toggle-image.show{
-            opacity: 1;
-        }
+.stove {
+    position: relative;
+   
+}
 
-        .stove picture.toggle-image{
-            position: absolute;
-            top:0;
-            left: 0;
-            opacity: 0;
-            transition: opacity .2s ease-in-out;
-        }
+.stove .stove-img{
+    padding-top:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width: 100%;
+    transition: opacity 0.5s 0.1s; 
+}
+
+.stove .stove-img.aktiv{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
     </style>
   </head>
   <body class="container-fluid" style="background: #c4c4c4">
     <div>
       <div class="row">
-        <div class="col-lg-6">some shit</div>
+        <div class="col-lg-6">some other stuff</div>
         <div class="col-lg-6">
             <div class="row no-gutters">
-                <div class="col-6">
-                    <picture>
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_oben_links.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_oben_links.jpg" alt="" />
-                    </picture>
-                </div>
                 <div class="col-6 stove">
-                    <picture>
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_oben_rechts_inaktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_oben_rechts_inaktiv.jpg" alt="" />
-                    </picture>
-                    <picture class="toggle-image">
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_oben_rechts_aktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_oben_rechts_aktiv.jpg" alt="" />
-                    </picture>
-                </div>
-                <div class="col-6 stove">
-                    <picture>
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_unten_links_inaktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_unten_links_inaktiv.jpg" alt="" />
-                    </picture>
-                    <picture class="toggle-image">
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_unten_links_aktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_unten_links_aktiv.jpg" alt="" />
-                    </picture>
-                </div>
-                <div class="col-6 stove">
-                    <picture>
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_unten_rechts_inaktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_unten_rechts_inaktiv.jpg" alt="" />
-                    </picture>
-                    <picture class="toggle-image">
-                        <source media="(max-width: 786px)" srcset="/Mobile/Home_mobile_kachel_unten_rechts_aktiv.jpg">
-                        <img class="img-fluid" src="/Desktop/Home_kachel_unten_rechts_aktiv.jpg" alt="" />
-                    </picture>
-                </div>
-            </div>
+                    <div class="stove-img" 
+                         style="background-image: url('/Desktop/Home_kachel_oben_links.jpg');"></div>
                 
+                </div>
+                
+                <div class="col-6 stove">
+                    <div class="stove-img inaktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_oben_rechts_inaktiv.jpg');"></div>
+                    <div class="stove-img aktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_oben_rechts_aktiv.jpg');"></div>
+                </div>
+                
+                <div class="col-6 stove">
+                    <div class="stove-img inaktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_unten_links_inaktiv.jpg');"></div>
+                    <div class="stove-img aktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_unten_links_aktiv.jpg');"></div>
+                </div>
+                
+                <div class="col-6 stove">
+                    <div class="stove-img inaktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_unten_rechts_inaktiv.jpg');"></div>
+                    <div class="stove-img aktiv" 
+                         style="background-image: url('/Desktop/Home_kachel_unten_rechts_aktiv.jpg');"></div>
+                </div>
+            </div>       
         </div>
         </div>
       </div>

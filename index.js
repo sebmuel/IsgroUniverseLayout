@@ -1,17 +1,16 @@
 const stoves = document.querySelectorAll(".stove");
-
+let isMobile;
 stoves.forEach((s) => {
   s.addEventListener("pointerover", handleHover);
   s.addEventListener("pointerout", handleOut);
 });
 
-function handleOut(e) {
-  const imageBackdrop = this.querySelector("picture[class*='toggle-image']");
-  imageBackdrop.classList.remove("show");
+function handleOut() {
+  const ele = this.querySelector(".stove-img.aktiv");
+  ele.style.opacity = "0";
 }
 
-function handleHover(e) {
-  const imageBackdrop = this.querySelector("picture[class*='toggle-image']");
-  imageBackdrop.classList.add("show");
-  console.dir(imageBackdrop);
+function handleHover() {
+  const ele = this.querySelector(".stove-img.aktiv");
+  ele.style.opacity = "1";
 }
