@@ -1,18 +1,41 @@
 // grab all elements
-const stoves = document.querySelectorAll(".stove");
+const stoves = document.querySelectorAll(".stove:not(disable)");
+const ENTRANCE_ANIMATION = "animate__fadeIn";
+const OUT_ANIMATION = "animate__fadeOut";
 
 // add the eventlistener with callbacks
-stoves.forEach((s) => {
-  s.addEventListener("pointerover", handleHover);
-  s.addEventListener("pointerout", handleOut);
+stoves.forEach((stove) => {
+  stove.addEventListener("pointerover", handleHover);
+  stove.addEventListener("pointerout", handleOut);
+  const ele = stove.querySelector(".stove-img.aktiv");
+  if (ele) {
+    ele.addEventListener("click", handleClick);
+  } else {
+    stove.addEventListener("click", handleClick);
+  }
 });
 
 // out callback
 function handleOut() {
-  this.querySelector(".stove-img.aktiv").style.opacity = "0";
+  if (this.querySelector(".stove-img.aktiv")) {
+    this.querySelector(".stove-img.aktiv").classList.add(OUT_ANIMATION);
+    this.querySelector(".stove-img.aktiv").classList.remove(ENTRANCE_ANIMATION);
+  }
 }
-
 // hover callback
 function handleHover() {
-  this.querySelector(".stove-img.aktiv").style.opacity = "1";
+  if (this.querySelector(".stove-img.aktiv")) {
+    this.querySelector(".stove-img.aktiv").classList.add(ENTRANCE_ANIMATION);
+    this.querySelector(".stove-img.aktiv").classList.remove(OUT_ANIMATION);
+  }
+}
+
+function handleClick() {
+  let link;
+  if (this.dataset.link) {
+    link = this.dataset.link;
+  } else {
+    link = this.parentNode.dataset.link;
+  }
+  window.location = link;
 }

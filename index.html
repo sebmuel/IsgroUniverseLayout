@@ -15,7 +15,7 @@
 
 .stove {
     position: relative;
-   
+    overflow: hidden;   
 }
 
  .stove-img{
@@ -24,7 +24,8 @@
     background-repeat: no-repeat;
     background-size: cover; 
     width: 100%;
-    transition: opacity 0.5s 0.1s; 
+    overflow: hidden;
+    cursor: pointer; 
 }
 
  .stove-img.aktiv{
@@ -42,30 +43,30 @@
         <div class="col-lg-6">some other stuff</div>
         <div class="col-lg-6">
             <div class="row no-gutters">
-                <div class="col-6 w-100">
+                <div class="col-6 disable stove" data-link="/link1/">
                     <div class="stove-img" 
                          style="background-image: url('/Desktop/Home_kachel_oben_links.jpg');"></div>
                 
                 </div>
                 
-                <div class="col-6 stove">
+                <div class="col-6 stove" data-link="/link2/">
                     <div class="stove-img inaktiv" 
                          style="background-image: url('/Desktop/Home_kachel_oben_rechts_inaktiv.jpg');"></div>
-                    <div class="stove-img aktiv" 
+                    <div class="stove-img aktiv animate__animated" 
                          style="background-image: url('/Desktop/Home_kachel_oben_rechts_aktiv.jpg');"></div>
                 </div>
                 
-                <div class="col-6 stove">
+                <div class="col-6 stove" data-link="/link3/">
                     <div class="stove-img inaktiv" 
                          style="background-image: url('/Desktop/Home_kachel_unten_links_inaktiv.jpg');"></div>
-                    <div class="stove-img aktiv" 
+                    <div class="stove-img aktiv animate__animated " 
                          style="background-image: url('/Desktop/Home_kachel_unten_links_aktiv.jpg');"></div>
                 </div>
                 
-                <div class="col-6 stove">
+                <div class="col-6 stove" data-link="/link4/">
                     <div class="stove-img inaktiv" 
                          style="background-image: url('/Desktop/Home_kachel_unten_rechts_inaktiv.jpg');"></div>
-                    <div class="stove-img aktiv" 
+                    <div class="stove-img aktiv animate__animated " 
                          style="background-image: url('/Desktop/Home_kachel_unten_rechts_aktiv.jpg');"></div>
                 </div>
             </div>       
@@ -84,5 +85,9 @@
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"
   ></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
   <script src="/index.js" defer></script>
 </html>
