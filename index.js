@@ -1,5 +1,5 @@
 const stoves = document.querySelectorAll(".stove");
-let isMobile;
+
 stoves.forEach((s) => {
   s.addEventListener("pointerover", handleHover);
   s.addEventListener("pointerout", handleOut);
