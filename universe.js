@@ -29,16 +29,15 @@ function setImageSrc(img){
 function handleOut() {
   const stove = this.querySelector(".stove-img.aktiv");
   if (stove) {
-    stove.classList.add(OUT_ANIMATION);
-    stove.classList.remove(ENTRANCE_ANIMATION);
+    stove.style.opacity = "0";
   }
 }
 // hover callback
 function handleHover() {
+  debugger
   const stove = this.querySelector(".stove-img.aktiv");
   if (stove) {
-    stove.classList.add(ENTRANCE_ANIMATION);
-    stove.classList.remove(OUT_ANIMATION);
+    stove.style.opacity = "1";
   }
 }
 
